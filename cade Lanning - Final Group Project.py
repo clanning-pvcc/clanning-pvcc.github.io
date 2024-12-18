@@ -900,6 +900,16 @@ foundation=[
 stock=[]
 stockDisplay=0
 random.shuffle(playingCards)
+def instructions():
+    print('''Assuming that you already know how to play "Classic Solitaire" there are only two functions you will be using here.
+first is newGame(), this function will generate a new board for you to use and is the function you will use to start a new game.
+And second is the draw() function, this function is rather self-explanatory, it draws from the stock, this is the function that
+you will use to cycle through the stock. Now, if you want to generate your first board type "yes" or "Yes into the input line.''')
+    questionB=input('do you want to generate your first board. yes/no  ')
+    if(questionB=='yes' or 'Yes'):
+        newGame()
+    elif(questionB=='no' or 'No'):
+        print('when you are ready to generate your first board type newGame() into the input line')
 def displayBoard():
     for i in range(len(boardDisplay)):
         for e in range(len(boardDisplay[i])):
@@ -995,3 +1005,10 @@ def draw():
     else:
         stockDisplay+=1
     displayBoard()
+print('This is my rendition of what many know as "Classic Solitare" although all it does is generate a board for you to base a game off of and allow you to draw from the deck as the move function does not actually work, however, I encourage you to try playing a game based off of these generations.')
+questionA=input('do you want to read the instructions Yes/No')
+if(questionA=='Yes' or 'yes'):
+    instructions()
+elif(questionA=='No' or 'no'):
+    print('Alright, we will now start the game')
+    newGame()
