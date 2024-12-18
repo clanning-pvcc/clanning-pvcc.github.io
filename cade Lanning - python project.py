@@ -900,8 +900,6 @@ foundation=[
 stock=[]
 stockDisplay=0
 random.shuffle(playingCards)
-def instructions():
-    hi=0
 def displayBoard():
     for i in range(len(boardDisplay)):
         for e in range(len(boardDisplay[i])):
@@ -979,7 +977,17 @@ def newGame():
 def move(fromCol,fromRows,toCol):
     temp=[]
     for i in range(len(board)):
-        hi=0
+        if(i>=fromRows):
+            temp.append(board[i][fromCol])
+            board[i][fromCol]='''┊         ┊
+┊         ┊
+┊         ┊
+┊         ┊
+┊         ┊
+┊         ┊
+┊         ┊
+┊         ┊
+┊_________┊'''
 def draw():
     global stockDisplay
     if(stockDisplay==len(stock)-3):
